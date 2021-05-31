@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title> Portal</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/portal"> Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+
+
+    <h2>Add Version</h2>
+
+    <form method="POST" action="/portal/version">
+      <p>Version ID will be auto assigned on successful registration</p>
+      <label for="vname">Name:</label><br>
+      <input type="text" name="vname" required><br>
+      <label for="vno">Version No:</label><br>
+      <input type="text" name="vno" required><br>
+      <label for="releasedate">release date:</label><br>
+      <input type="date" name="releasedate" required><br>
+      <label for="comment">Comment:</label><br>
+      <input type="text" name="comment" required><br>
+      <br>
+      <input type="Submit" value="Submit">
+    </form>
+  </div>
+</body>
+
+</html>

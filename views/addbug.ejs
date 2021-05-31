@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <title>Add Bug Portal</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/portal"> Portal</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+
+
+    <h2>Add Bug</h2>
+
+    <form method="POST" action="/portal/bug">
+      <p>Bug ID will be auto assigned on successful addition</p>
+      <label for="bname">Name:</label><br>
+      <input type="text" name="bname" required><br>
+      <label for="vno">Select Version ID</label><br>
+      <select name="vno"  >
+        <% vdata.forEach(data => { %>
+        <option value= "<%= data.vno %>" ><%= data.vno %></option>
+        <% }) %>
+      </select>
+      <br>
+      <label for="bugdate">Date:</label><br>
+      <input type="date" name="bugdate" required><br>
+      <label for="bugpriority">Select Priority</label><br>
+      <select name="bugpriority" required>
+          <option value="Very High">Very High</option>
+          <option value="High">High</option>
+          <option value="medium">medium</option>
+          <option value="low">low</option>
+      </select>
+      <br>
+      <label for="comment">Comment:</label><br>
+      <input type="text" name="comment" ><br>
+      <br>
+      <label for="bugtype">Type Of bug:</label><br>
+      <input type="text" name="bugtype" ><br>
+      <br>
+      <input type="Submit" value="Submit">
+    </form>
+  </div>
+</body>
+
+</html>

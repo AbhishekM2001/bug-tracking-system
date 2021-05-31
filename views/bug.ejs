@@ -1,0 +1,93 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <title>Bug Portal</title>
+    </head>
+    
+    <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"></a>
+          </div>
+          <ul class="nav navbar-nav">
+            
+            <li><a href="/portal"> Portal</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+        <div class="container">
+            <h3>Bugs View And Manage</h3>
+        </div>
+    
+        <div class="container" >
+            <div class="row">
+        
+              <ul class="container">
+                <a class="btn btn-primary text-center" href="/portal/bug/new" role="button"> Add Bug</a>
+                <br>
+                <br>
+                <a class="btn btn-primary text-center" href="/portal/bug/modify" role="button">Modify Status of Bug</a>
+                <br>
+                <br>
+                <a class="btn btn-primary text-center" href="/portal/bug/edit" role="button">Delete Bug</a>
+                <br>
+                <br>
+    
+        
+              </ul>
+            </div>
+          </div>
+    
+          <br>
+          <br>
+          <br>
+          <br>
+      <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Version no</th>
+                <th scope="col">Date</th>
+                <th scope="col">Filled by</th>
+                <th scope="col">Bug Priority</th>
+                <th scope="col">Comments</th>
+                <th scope="col">Bug Type</th>
+                <th scope="col">Bug Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% data.forEach(bug => { %>  
+              <tr>
+                <th scope="row">B-<%= bug.id %></th>
+                <td><%= bug.bname %></td>
+                <td><%= bug.vno %></td>
+                <td><%= bug.bugdate %></td>
+                <td><%= bug.filername %></td>
+                <td><%= bug.bugpriority %></td>
+                <td><%= bug.comment %></td>
+                <td><%= bug.bugtype %></td>
+                <td><%= bug.bugstatus %></td>
+                
+              
+              </tr>
+              <% }); %>
+            
+            </tbody>
+          </table>
+      </div>
+    </body>
+    
+    </html>
+      </div>
+    </body>
+    
+    </html>
