@@ -29,10 +29,10 @@
       <p>Bug ID will be auto assigned on successful addition</p>
       <label for="bname">Name:</label><br>
       <input type="text" name="bname" required><br>
-      <label for="vno">Select Version ID</label><br>
-      <select name="vno"  >
+      <label for="vid">Select Version ID</label><br>
+      <select name="vid"  >
         <% vdata.forEach(data => { %>
-        <option value= "<%= data.vno %>" ><%= data.vno %></option>
+        <option value= "<%= data.id %>" >V-<%= data.id %></option>
         <% }) %>
       </select>
       <br>

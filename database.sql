@@ -4,8 +4,7 @@ CREATE TABLE projects(
     id SERIAL PRIMARY KEY,
     pname TEXT UNIQUE,
     startdate TEXT,
-    description TEXT,
-    totalrelease INTEGER
+    description TEXT
 );
 
 
@@ -13,7 +12,7 @@ CREATE TABLE versions(
     id SERIAL PRIMARY KEY,
     vname TEXT UNIQUE,
     pname TEXT REFERENCES projects(pname),
-    vno TEXT UNIQUE,
+    vno TEXT,
     releasedate TEXT,
     filername TEXT,
     comment TEXT,
@@ -23,7 +22,7 @@ CREATE TABLE versions(
 CREATE TABLE bugs(
     id SERIAL PRIMARY KEY,
     bname TEXT,
-    vno TEXT REFERENCES versions(vno, pname),
+    vid INTEGER REFERENCES versions(id),
     bugdate TEXT,
     filername TEXT,
     bugpriority TEXT,

@@ -25,14 +25,13 @@
   </nav>
   <div class="container">
 
-    <h1>Bug Management portal</h1>
+    <h1><%= pname %></h1>
 
     
-    <h3>Manage :</h3>
+    <h3>View :</h3>
     <ul>
-      <li><a href="/portal/project">Project</a></li>
-      <li><a href="/portal/version">Version</a></li>
-      <li><a href="/portal/bug">Bug</a></li>
+      <li><a href="/portal/project/<%= pname %>/version">Version</a></li>
+      <li><a href="/portal/project/<%= pname %>/bug">Bug</a></li>
       
     </ul>
   </div>

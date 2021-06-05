@@ -6,7 +6,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <title>Version Portal</title>
+      <title>Bug Portal</title>
     </head>
     
     <body>
@@ -23,19 +23,27 @@
       </nav>
     
         <div class="container">
-            <h3>Version View And Manage</h3>
+            <h3>Project View And Manage</h3>
         </div>
     
         <div class="container" >
             <div class="row">
         
               <ul class="container">
-                <a class="btn btn-primary text-center" href="/portal/version/new" role="button"> Add version</a>
+                <a class="btn btn-primary text-center" href="/portal/project/new" role="button"> New Project</a>
                 <br>
                 <br>
-                <a class="btn btn-primary text-center" href="/portal/version/edit" role="button"> Edit version</a>
                 <br>
-                <br>
+                <form method="POST" action="/portal/project/select">
+                  <label for="pname">Select Project</label><br>
+                  <select name="pname"  >
+                  <% data.forEach(data => { %>
+                    <option value= "<%= data.pname %>" ><%= data.pname %></option>
+                  <% }) %>
+                  </select>
+                  <br>
+                  <input type="Submit" value="Submit">
+                </form>
     
         
               </ul>
@@ -52,27 +60,17 @@
               <tr>
                 <th scope="col">id</th>
                 <th scope="col">Name</th>
-                <th scope="col">Project Name</th>
-                <th scope="col">Version no</th>
-                <th scope="col">Release Date</th>
-                <th scope="col">Filled By </th>
-                <th scope="col">Comment</th>
-                <th scope="col">Total Active Bug</th>
-                
+                <th scope="col">Start Date</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
-              <% data.forEach(version => { %>  
+              <% data.forEach(project => { %>  
               <tr>
-                <th scope="row">V-<%= version.id %></th>
-                <td><%= version.vname %></td>
-                <td><%= version.pname %></td>
-                <td><%= version.vno %></td>
-                <td><%= version.releasedate %></td>
-                <td><%= version.filername %></td>
-                <td><%= version.comment %></td>
-                <td><%= version.activebugs %></td>
-              
+                <th scope="row">P-<%= project.id %></th>
+                <td><%= project.pname %></td>
+                <td><%= project.startdate %></td>
+                <td><%= project.description %></td>
               </tr>
               <% }); %>
             

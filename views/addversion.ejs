@@ -29,6 +29,13 @@
       <p>Version ID will be auto assigned on successful registration</p>
       <label for="vname">Name:</label><br>
       <input type="text" name="vname" required><br>
+      <label for="pname">Select Project</label><br>
+                  <select name="pname"  >
+                  <% pdata.forEach(data => { %>
+                    <option value= "<%= data.pname %>" ><%= data.pname %></option>
+                  <% }) %>
+      </select>
+      <br>
       <label for="vno">Version No:</label><br>
       <input type="text" name="vno" required><br>
       <label for="releasedate">release date:</label><br>
