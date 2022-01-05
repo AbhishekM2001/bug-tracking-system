@@ -1,5 +1,3 @@
-# 19BCE0611 SWE PROJECT 
-# Ujjwal Gupta
 # bug-tracking-system
 
 How to Run This Project
